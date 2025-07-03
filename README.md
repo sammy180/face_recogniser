@@ -64,13 +64,15 @@ cd face_recogniser
 sudo apt update
 sudo apt install python3-pip python3-dev cmake
 
-# 3. Set Up Conda Environment
-conda create -n face_recognition python=3.12
-conda activate face_recognition
+# 3. Set Up Python Virtual Environment
+python -m venv venv
+# Activate the environment:
+source venv/bin/activate  # On Linux/macOS
+venv\Scripts\activate     # On Windows
 
-# 4. Install required packages
-conda install -c conda-forge dlib opencv numpy
-pip install face_recognition
+# 4. Upgrade pip and install required packages
+python -m pip install --upgrade pip
+pip install dlib face_recognition opencv-python numpy
 
 # 5. Verify Installation
 python -c "import cv2, face_recognition, numpy; print('All packages installed successfully!')"
