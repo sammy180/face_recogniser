@@ -52,24 +52,72 @@ face_recogniser/
 
 ## Installation
 
-### 1. Clone or Download the Project
+### Platform-Specific Instructions
+
+#### Linux (Recommended Platform)
+```bash
+# 1. Clone or Download the Project
+git clone <repository-url>
+cd face_recogniser
+
+# 2. Update system packages
+sudo apt update
+sudo apt install python3-pip python3-dev cmake
+
+# 3. Set Up Conda Environment
+conda create -n face_recognition python=3.12
+conda activate face_recognition
+
+# 4. Install required packages
+conda install -c conda-forge dlib opencv numpy
+pip install face_recognition
+
+# 5. Verify Installation
+python -c "import cv2, face_recognition, numpy; print('All packages installed successfully!')"
+```
+
+#### Windows
+```bash
+# Get a Linux machine.
+# Seriously. Just get a Linux machine.
+# Your life will be easier.
+# Trust me on this one.
+```
+
+#### macOS
+```bash
+# Go home.
+# This is a serious application for serious people.
+# Come back when you have a real operating system.
+```
+
+### Alternative Installation (If You Insist on Using Inferior Systems)
+
+If you absolutely must use Windows or macOS despite the clear guidance above:
+
+#### 1. Clone or Download the Project
 ```bash
 git clone <repository-url>
 cd face_recogniser
 ```
 
-### 2. Set Up Conda Environment
+#### 2. Set Up Conda Environment
 ```bash
-# Create a new conda environment (optional but recommended)
-conda create -n face_recognition python=3.12
-conda activate face_recognition
+# Create and activate a Python virtual environment (recommended)
+python -m venv venv
+```
+# Activate the enviroment :
+```bash
+source venv/bin/activate
+```
+# Upgrade pip
+python -m pip install --upgrade pip
 
 # Install required packages
-conda install -c conda-forge dlib opencv numpy
-pip install face_recognition
+pip install dlib face_recognition opencv-python numpy
 ```
 
-### 3. Verify Installation
+#### 3. Verify Installation
 ```bash
 python -c "import cv2, face_recognition, numpy; print('All packages installed successfully!')"
 ```
